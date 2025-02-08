@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYOCuisine Login</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preload" as="image" href="images/login-background.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/login-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            width: 350px;
+            margin: 100px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(212, 146, 146, 0.2);
+        }
+        .login-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .login-container input {
+            width: 95%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 95%;
+            padding: 15px;
+            background: #ec3f3f;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .login-container button:hover {
+            background: #ee0101;
+        }
+        .credentials {
+            margin-top: 30px;
+            background: #d77d07;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: left;
+        }
+        .credentials pre {
+            margin: 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>BYOCuisine Kits Login</h1>
+        <input type="text" placeholder="Username" id="username">
+        <input type="password" placeholder="Password" id="password">
+        <button onclick="login()">Login</button>
+        <div class="credentials">
+            <strong>Accepted usernames are:</strong>
+            <pre>
+standard_user
+locked_out_user
+problem_user
+performance_glitch_user
+error_user
+visual_user
+            </pre>
+            <strong>Password for all users:</strong>
+            <pre>yum_sauce</pre>
+        </div>
+    </div>
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            
+            if (password === "yum_sauce") {
+                window.location.href = "products.html";
+            } else {
+                alert("Incorrect credentials");
+            }
+        }
+    </script>
+</body>
+</html>

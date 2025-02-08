@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYOCuisine Products</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eda4a4;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background: #2c3e50;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            background: #34495e;
+        }
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+            flex: 1;
+            position: relative;
+        }
+        .cart {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .cart img {
+            width: 40px;
+            height: 40px;
+        }
+        .cart span {
+            font-weight: bold;
+            margin-left: 5px;
+            background: #e67e22;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+        }
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .product-card .price {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-card button {
+            background: #e67e22;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .product-card button:hover {
+            background: #d35400;
+        }
+    </style>
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById("cart-counter").innerText = cartCount;
+        }
+
+        function goToCart() {
+            window.location.href = "checkout.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="products.html">All Items</a>
+        <a href="landing.html" onclick="logout()">Logout</a>
+    </div>
+    <div class="main-content">
+        <div class="cart" onclick="goToCart()">
+            <img src="images/cart.png" alt="Cart">
+            <span id="cart-counter">0</span>
+        </div>
+        <div class="header">BYOCuisine Kits</div>
+        <div class="products-container">
+            <div class="product-card">
+                <img src="images/pasta.jpg" alt="Italian Pasta Kit">
+                <h2>Italian Pasta Kit</h2>
+                <p>Everything you need to make authentic Italian pasta at home.</p>
+                <div class="price">$24.99</div>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/sushi.jpg" alt="Sushi Making Kit">
+                <h2>Sushi Making Kit</h2>
+                <p>Includes all the essentials for crafting delicious sushi rolls.</p>
+                <div class="price">$29.99</div>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/taco.jpg" alt="Mexican Taco Kit">
+                <h2>Mexican Taco Kit</h2>
+                <p>Authentic ingredients for making mouthwatering tacos.</p>
+                <div class="price">$19.99</div>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/curry.jpg" alt="Indian Curry Kit">
+                <h2>Indian Curry Kit</h2>
+                <p>All the spices and ingredients needed for a flavorful Indian curry.</p>
+                <div class="price">$22.99</div>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/crepe.jpg" alt="French Crepe Kit">
+                <h2>French Crepe Kit</h2>
+                <p>Master the art of French baking with this premium kit.</p>
+                <div class="price">$34.99</div>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/chinese.jpg" alt="Chinese Stir-Fry Kit">
+                <h2>Chinese Stir-Fry Kit</h2>
+                <p>Essential sauces and ingredients for making a delicious stir-fry.</p>
+                <div class="price">$27.99</div>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

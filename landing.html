@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYOCuisine Kits</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preload" as="image" href="images/background.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .header {
+            background-color: #f8f8f8;
+            padding: 20px 0;
+            font-size: 32px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .header img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .divider {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+        .kit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-content: center;
+        }
+        .kit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .kit {
+            position: relative;
+            width: 200px;
+            height: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .kit img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .kit::after {
+            content: attr(data-title);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .kit:hover::after {
+            opacity: 1;
+        }
+        .kit-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 1);
+            padding: 10px;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+        }
+        .kit-name {
+            font-weight: bold;
+        }
+        .login-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="images/BYOCK logo.png" alt="Logo">
+        BYOCuisine Kits
+    </div>
+    <div class="divider"></div>
+    <div class="container">
+        <div class="kit-grid">
+            <div class="kit-item">
+                <div class="kit" data-title="Italian Pasta Kit">
+                    <img src="images/pasta.jpg" alt="Italian Pasta Kit">
+                </div>
+                <div class="kit-description">
+                    <span class="kit-name"><u>Italian Pasta Kit</u></span><br>
+                    Includes pasta, sauce, and seasoning mix.
+                </div>
+            </div>
+            <div class="kit-item">
+                <div class="kit" data-title="Japanese Sushi Kit">
+                    <img src="images/sushi.jpg" alt="Japanese Sushi Kit">
+                </div>
+                <div class="kit-description">
+                    <span class="kit-name"><u>Japanese Sushi Kit</u></span><br>
+                    Contains sushi rice, seaweed, and soy sauce.
+                </div>
+            </div>
+            <div class="kit-item">
+                <div class="kit" data-title="Mexican Taco Kit">
+                    <img src="images/taco.jpg" alt="Mexican Taco Kit">
+                </div>
+                <div class="kit-description">
+                    <span class="kit-name"><u>Mexican Taco Kit</u></span><br>
+                    Includes taco shells, seasoning, and salsa.
+                </div>
+            </div>
+            <div class="kit-item">
+                <div class="kit" data-title="Indian Curry Kit">
+                    <img src="images/curry.jpg" alt="Indian Curry Kit">
+                </div>
+                <div class="kit-description">
+                    <span class="kit-name"><u>Indian Curry Kit</u></span><br>
+                    Contains spices, rice, and curry paste.
+                </div>
+            </div>
+            <div class="kit-item">
+                <div class="kit" data-title="French Crepe Kit">
+                    <img src="images/crepe.jpg" alt="French Crepe Kit">
+                </div>
+                <div class="kit-description">
+                    <span class="kit-name"><u>French Crepe Kit</u></span><br>
+                    Includes crepe mix, chocolate spread, and toppings.
+                </div>
+            </div>
+            <div class="kit-item">
+                <div class="kit" data-title="Chinese Stir-Fry Kit">
+                    <img src="images/chinese.jpg" alt="Chinese Stir-Fry Kit">
+                </div>
+                <div class="kit-description">
+                    <span class="kit-name"><u>Chinese Stir-Fry Kit</u></span><br>
+                    Contains noodles, sauce, and vegetables.
+                </div>
+            </div>
+        </div>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</body>
+</html>
